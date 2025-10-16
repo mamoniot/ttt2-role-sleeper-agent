@@ -86,6 +86,7 @@ local function SleeperAgentCacheConVars()
   if CLIENT then
     TTT2SleeperAgent.colors = {}
     for i = 1, #mults do
+      local mult = mults[i]
       if mult <= 1.0 then
         local r = color0.r - (color0.r - color1.r) * mult
         local g = color0.g - (color0.g - color1.g) * mult
