@@ -60,11 +60,12 @@ if CLIENT then -- CLIENT
   end
 
   function HUDELEMENT:Draw()
-    local client = LocalPlayer()
+    local TTT2SleeperAgent = TTT2SleeperAgent
     local mult = nil
     local time_scale = nil
     local color = nil
 
+    local client = LocalPlayer()
     if TTT2SleeperAgent and client:IsActive() and client:Alive() and client:GetSubRole() == ROLE_SLEEPER then
       local mults = TTT2SleeperAgent.mults
       local sleep_times = TTT2SleeperAgent.sleep_times
