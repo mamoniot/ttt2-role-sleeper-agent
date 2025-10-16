@@ -74,11 +74,13 @@ local function SleeperAgentCacheConVars()
     local sleep_time = GetConVar(convar_sleeps[i]):GetFloat() or 0.0
     if sleep_time > 0.0 then
       local mult = math.max(0.0, GetConVar(convar_mults[i]):GetFloat())
-      if mults[j] ~= mult then
+      if mults[j] == mult then
+        sleep_times[j] = sleep_times[j] + sleep_time
+      else
         j = j + 1
         mults[j] = mult
+        sleep_times[j] = sleep_time
       end
-      sleep_times[j] = (sleep_times[j] or 0.0) + sleep_time
     end
   end
   if CLIENT then
