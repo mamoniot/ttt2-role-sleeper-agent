@@ -59,17 +59,6 @@ if CLIENT then -- CLIENT
     return IsValid(client)
   end
 
-  local color0 = Color(230, 20, 20)
-  local color1 = Color(170, 160, 0)
-  local color2 = Color(20, 160, 20)
-
-  local convar_mults = {}
-  local convar_sleeps = {}
-  for i = 1, 9 do
-    convar_mults[i] = "ttt2_sleeper_damage_mult" .. tostring(i)
-    convar_sleeps[i] = "ttt2_sleeper_sleep_time" .. tostring(i)
-  end
-
   function HUDELEMENT:Draw()
     local client = LocalPlayer()
     local mult = nil
