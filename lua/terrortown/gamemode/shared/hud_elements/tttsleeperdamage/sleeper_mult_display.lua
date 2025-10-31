@@ -71,7 +71,7 @@ if CLIENT then -- CLIENT
       local is_alive = client:Alive()
       show_bar = TTT2SleeperAgent and client:IsActive() and is_alive and client:GetSubRole() == ROLE_SLEEPER
       if not is_alive and not show_bar then
-        local spectated = client:GetTarget()
+        local spectated = client:GetTargetPlayer()
         show_bar = IsValid(spectated) and spectated:IsPlayer() and spectated:Alive() and spectated:GetSubRole() == ROLE_SLEEPER
       end
     end
