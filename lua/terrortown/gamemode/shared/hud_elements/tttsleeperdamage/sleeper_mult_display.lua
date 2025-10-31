@@ -66,7 +66,17 @@ if CLIENT then -- CLIENT
     local color = nil
 
     local client = LocalPlayer()
-    if TTT2SleeperAgent and client:IsActive() and client:Alive() and client:GetSubRole() == ROLE_SLEEPER then
+    local show_bar = false
+    if IsValid(client) then
+      local is_alive = client:Alive()
+      show_bar = TTT2SleeperAgent and client:IsActive() and is_alive and client:GetSubRole() == ROLE_SLEEPER
+      if not is_alive and not show_bar then
+        local spectated = client:GetTarget()
+        show_bar = IsValid(spectated) and spectated:IsPlayer() and spectated:Alive() and spectated:GetSubRole() == ROLE_SLEEPER
+      end
+    end
+
+    if show_bar then
       local mults = TTT2SleeperAgent.mults
       local sleep_times = TTT2SleeperAgent.sleep_times
       local dt = CurTime() - TTT2SleeperAgent.start_time

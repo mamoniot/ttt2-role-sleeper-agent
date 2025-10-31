@@ -13,11 +13,11 @@ for i = 1, 9 do
 end
 
 CreateConVar(convar_mults[1], 0.0, flags)
-CreateConVar(convar_sleeps[1], 80, flags)
+CreateConVar(convar_sleeps[1], 60, flags)
 CreateConVar(convar_mults[2], 0.5, flags)
-CreateConVar(convar_sleeps[2], 80, flags)
+CreateConVar(convar_sleeps[2], 60, flags)
 CreateConVar(convar_mults[3], 1.0, flags)
-CreateConVar(convar_sleeps[3], 80, flags)
+CreateConVar(convar_sleeps[3], 60, flags)
 CreateConVar(convar_mults[4], 1.5, flags)
 CreateConVar(convar_sleeps[4], 1.0, flags)
 for i = 5, #convar_mults do
