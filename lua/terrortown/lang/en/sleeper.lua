@@ -1,11 +1,11 @@
 L = LANG.GetLanguageTableReference("en")
 
 L[SLEEPER.name] = "Sleeper Agent"
-L["info_popup_" .. SLEEPER.name] = [[You are a Sleeper Agent! You must hang around people to survive until the end of the round!]]
+L["info_popup_" .. SLEEPER.name] = [[You are a Sleeper Agent! You must build trust and wait until you are able to deal damage!]]
 L["body_found_" .. SLEEPER.abbr] = "They were a Sleeper Agent!"
 L["search_role_" .. SLEEPER.abbr] = "This person was a Sleeper Agent!"
 L["target_" .. SLEEPER.name] = "Sleeper Agent"
-L["ttt2_desc_" .. SLEEPER.name] = [[The Sleeper Agent is a Traitor role that initially cannot deal any damage, but over the course of the round their damage multiplier increases until they deal more damage than a normal Traitor.]]
+L["ttt2_desc_" .. SLEEPER.name] = [[The Sleeper Agent is a traitor role that initially cannot deal any damage, but over the course of the round their damage multiplier increases until they deal more damage than a normal traitor.]]
 
 L.ttt2_sleeper_multiplier_text = "You deal {multiplier}x damage!"
 L.ttt2_sleeper_spectated_text = "This player deals {multiplier}x damage!"

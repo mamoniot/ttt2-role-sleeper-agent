@@ -29,27 +29,36 @@ function ROLE:PreInitialize()
   self.color = Color(187, 156, 155, 255)
 
   self.abbr = "sleeper"
-  self.surviveBonus = 0.5
-  self.scoreKillsMultiplier = 5
-  self.scoreTeamKillsMultiplier = -16
+
+  self.defaultTeam = TEAM_TRAITOR
+  self.defaultEquipment = TRAITOR_EQUIPMENT
+  self.preventWin = false
+  self.unknownTeam = false
+
+  self.score.surviveBonusMultiplier = 0.5
+  self.score.timelimitMultiplier = -0.5
+  self.score.killsMultiplier = 2
+  self.score.teamKillsMultiplier = -16
+  self.score.bodyFoundMuliplier = 0
+
   self.preventFindCredits = false
   self.preventKillCredits = false
   self.preventTraitorAloneCredits = false
 
   self.isOmniscientRole = true
 
-  self.defaultEquipment = SPECIAL_EQUIPMENT
-  self.defaultTeam = TEAM_TRAITOR
-
   self.conVarData = {
     pct = 0.17, -- necessary: percentage of getting this role selected (per player)
     maximum = 3, -- maximum amount of roles in a round
     minPlayers = 5, -- minimum amount of players until this role is able to get selected
     credits = 1, -- the starting credits of a specific role
+    traitorButton = 1, -- can use traitor buttons
+    ragdollPinning = 1,
+    shopFallback = SHOP_FALLBACK_TRAITOR
+    creditsAwardDeadEnable = 1,
+    creditsAwardKillEnable = 1,
     togglable = true, -- option to toggle a role for a client if possible (F1 menu)
     random = 49,
-    traitorButton = 1, -- can use traitor buttons
-    shopFallback = SHOP_FALLBACK_TRAITOR
   }
 end
 
