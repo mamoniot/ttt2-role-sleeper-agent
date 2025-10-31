@@ -8,6 +8,7 @@ L["target_" .. SLEEPER.name] = "Sleeper Agent"
 L["ttt2_desc_" .. SLEEPER.name] = [[The Sleeper Agent is a Traitor role that initially cannot deal any damage, but over the course of the round their damage multiplier increases until they deal more damage than a normal Traitor.]]
 
 L.ttt2_sleeper_multiplier_text = "You deal {multiplier}x damage!"
+L.ttt2_sleeper_spectated_text = "This player deals {multiplier}x damage!"
 
 L.label_ttt2_sleeper_damage_mult1 = "1st Damage Multiplier"
 L.label_ttt2_sleeper_damage_mult2 = "2nd Damage Multiplier"

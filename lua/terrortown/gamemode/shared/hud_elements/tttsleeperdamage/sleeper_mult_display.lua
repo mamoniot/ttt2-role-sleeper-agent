@@ -64,6 +64,10 @@ if CLIENT then -- CLIENT
     local mult = nil
     local time_scale = nil
     local color = nil
+    -- TODO: I do not like this displacement hack to get the UI to align correct when spectating,
+    -- but I do not know how to set its alignment to the player healthbar yet.
+    local displacement = 0
+    local text = "ttt2_sleeper_multiplier_text"
 
     local client = LocalPlayer()
     local show_bar = false
@@ -73,6 +77,8 @@ if CLIENT then -- CLIENT
       else
         local spectated = client:GetObserverTarget()
         show_bar = IsValid(spectated) and spectated:IsPlayer() and spectated:Alive() and spectated:GetSubRole() == ROLE_SLEEPER
+        displacement = -36
+        text = "ttt2_sleeper_spectated_text"
       end
     end
 
@@ -101,14 +107,15 @@ if CLIENT then -- CLIENT
     end
 
     if mult then
+      -- print("hello")
       local pos = self:GetPos()
       local size = self:GetSize()
-      local x, y = pos.x, pos.y
+      local x, y = pos.x, pos.y + displacement
       local w, h = size.w, size.h
 
       self:DrawBg(x, y, w, h, self.basecolor)
 
-      local text = LANG.GetParamTranslation("ttt2_sleeper_multiplier_text", {multiplier = tostring(math.floor(mult * 100) / 100)})
+      local text = LANG.GetParamTranslation(text, {multiplier = tostring(math.floor(mult * 100) / 100)})
       self:DrawBar(x + pad, y + pad, w - pad * 2, h - pad * 2, color, time_scale, self.scale, text)
 
       self:DrawLines(x, y, w, h, self.basecolor.a)
